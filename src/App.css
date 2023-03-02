@@ -1,11 +1,15 @@
-.inner {
-  width: 1200px;
-  display: flex;
-  margin: 0 auto;
-}
-
 .inner ul {
   display: flex;
   list-style: none;
   gap: 30px;
+}
+* {
+  box-sizing: border-box;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
+ul {
+  list-style: none;
 }

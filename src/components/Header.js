@@ -1,32 +1,53 @@
-const Header = () => {
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+const H1 = styled.h1`
+  font-size: 35px;
+`;
+
+const Inner = styled.div`
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+  justify-content: space-between;
+`;
+
+const UL = styled.ul`
+  display: flex;
+  line-height: 70px;
+  gap: 30px;
+`;
+
+const H2 = styled.h2`
+  line-height: 70px;
+`;
+const Header = ({ NAV }) => {
   return (
     <>
       <header>
-        <div className="inner">
-          <h1>kakaoEnterprize</h1>
+        <Inner>
+          <H1>kakaoEnterprize</H1>
           <nav>
-            <ul>
-              <li>
-                <a href="">menu10</a>
-              </li>
-              <li>
-                <a href="">menu20</a>
-              </li>
-              <li>
-                <a href="">menu30</a>
-              </li>
-              <li>
-                <a href="">menu40</a>
-              </li>
-              <li>
-                <a href="">menu50</a>
-              </li>
-            </ul>
+            <UL>
+              {NAV.map((it) => {
+                return (
+                  <li key={it.id}>
+                    <Link to={it.link}>{it.title}</Link>
+                  </li>
+                );
+              })}
+            </UL>
           </nav>
           <div className="unit">
-            <h2>인재영입 <a href=""><img src="" alt="" /></a> </h2>
+            <H2>
+              인재영입{" "}
+              <a href="">
+                <img src="" alt="" />
+              </a>{" "}
+            </H2>
           </div>
-        </div>
+        </Inner>
       </header>
     </>
   );
